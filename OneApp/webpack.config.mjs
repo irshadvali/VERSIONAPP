@@ -21,7 +21,7 @@ const STANDALONE = Boolean(process.env.STANDALONE);
  */
 export default (env) => {
   const {
-    mode = 'development',
+    mode = 'production',
     context = Repack.getDirname(import.meta.url),
     entry = './index.js',
     platform = process.env.PLATFORM,

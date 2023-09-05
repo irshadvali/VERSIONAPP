@@ -7828,7 +7828,7 @@
     "ansi-escapes" "^4.2.1"
     "supports-hyperlinks" "^2.0.0"
 
-"terser-webpack-plugin@^5.3.7":
+"terser-webpack-plugin@^5.3.7", "terser-webpack-plugin@^5.3.9":
   "integrity" "sha512-ZuXsqE07EcggTWQjXUj+Aot/OMcD0bMKGgF63f7UxYcu5/AJF53aIpK1YoP5xR9l6s/Hy2b+t1AM0bLNPRuhwA=="
   "resolved" "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-5.3.9.tgz"
   "version" "5.3.9"
