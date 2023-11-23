@@ -6,6 +6,8 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native webpack-start --port 8083",
+    "build:production": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "bundle": "react-native bundle --entry-file index.js --platform android --dev false --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
     "test": "jest",
     "lint": "eslint ."
   },
@@ -15,6 +17,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.22.15",
     "@babel/runtime": "^7.12.5",
     "@callstack/repack": "^3.4.0",
     "@react-native-community/eslint-config": "^2.0.0",
@@ -29,5 +32,8 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "resolutions": {
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3"
   }
 }

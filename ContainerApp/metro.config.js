@@ -4,7 +4,7 @@
  *
  * @format
  */
-
+const path = require('path');
 module.exports = {
   transformer: {
     getTransformOptions: async () => ({
@@ -14,4 +14,9 @@ module.exports = {
       },
     }),
   },
+  watchFolders: [
+    path.resolve(__dirname, 'android/app/src/main/assets/'),
+    path.resolve(__dirname, 'android/app/src/main/assets/other'),
+    // Add any other relevant directories here
+  ],
 };

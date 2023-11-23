@@ -10,7 +10,7 @@ import App from './App';
 const resolveURL = Federated.createURLResolver({
   containers: {
     // eslint-disable-next-line prettier/prettier
-    OneApp: Platform.OS === 'ios' ? 'http://localhost:8083/[name][ext]' : 'http://10.0.2.2:8083/[name][ext]',
+    OneApp: Platform.OS === 'ios' ? 'http://localhost:8083/[name][ext]' : 'https://3d96-106-51-161-22.ngrok-free.app/[name][ext]',
   },
 });
 

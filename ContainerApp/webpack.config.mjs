@@ -19,7 +19,7 @@ import * as Repack from '@callstack/repack';
  */
 export default (env) => {
   const {
-    mode = 'development',
+    mode = 'production',
     context = Repack.getDirname(import.meta.url),
     entry = './index.js',
     platform = process.env.PLATFORM,
@@ -66,7 +66,7 @@ export default (env) => {
      * This should be always `false`, since the Source Map configuration is done
      * by `SourceMapDevToolPlugin`.
      */
-    devtool: false,
+    devtool: "inline-source-map",
     context,
     /**
      * `getInitializationEntries` will return necessary entries with setup and initialization code.

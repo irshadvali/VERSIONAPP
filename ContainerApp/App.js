@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 import {
   SafeAreaView,
@@ -25,12 +25,28 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-
+// import OneAppContainer from './android/app/src/main/assets/other/index.android.bundle';
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
 const App1 = React.lazy(() => Federated.importModule('OneApp', './App'));
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
+  const [check, setCheck] = useState('');
+
+  useEffect(() => {
+    if (
+      typeof global.HermesInternal === 'object' &&
+      global.HermesInternal !== null
+    ) {
+      // Hermes is enabled
+      console.log('Hermes is enabled.');
+      setCheck('Hermes is enabled.');
+    } else {
+      // Hermes is disabled
+      console.log('Hermes is disabled.');
+      setCheck('Hermes is disabled.');
+    }
+  }, []);
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
@@ -46,6 +62,7 @@ const App = () => {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
+        <Text>{check}</Text>
         <Text>Container</Text>
         <View
           styles={{
@@ -55,6 +72,7 @@ const App = () => {
           }}>
           <Text> below other app</Text>
         </View>
+        {/* <OneAppContainer /> */}
         <View style={{padding: 20, backgroundColor: 'blue'}}>
           <React.Suspense fallback={<Text>Loading app1...</Text>}>
             <App1 />
